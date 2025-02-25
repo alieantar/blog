@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/content.css">
+    <title>Blog Web App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+</head>
+
+<!-- posts[key][0] Date -->
+<!-- posts[i][1] Contetnt -->
+<body>
+    <%- include("partials/header.ejs") %>
+
+    <div class="view-container">
+        <% if (locals.posts) { %>
+            <div class="post-list">
+                <ol>
+                    <% for (var postId of Object.keys(posts)){ %>
+                        <li>
+                            <a href="#<%=postId%>" id="<%=postId%>" onclick="clickedId(this.id)">
+                                <%= posts[postId][1] %>
+                            </a>
+                        </li>
+                    <% } %>
+                </ol>
+
+            </div>
+            <div class = "hide content-display">
+                <h2 class = "title"></h2>
+                <h3 class = "date"></h3>
+                <p class = "content"></p>
+            </div>
+        <% } %>
+
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+    <!-- <script src="/js/contentNavigation.js"></script> -->
+     <script>
+        const posts = <%- JSON.stringify(posts) %>;
+        console.log("Posts from EJS: ", posts);
+        // console.log("Posts: ", posts);
+        function clickedId(id){
+            console.log(posts[id][2]);
+            document.querySelector(".title").innerHTML = posts[id][1];
+            document.querySelector(".date").innerHTML = posts[id][0];
+            document.querySelector(".content").innerHTML = posts[id][2];
+            document.querySelector(".hide").classList.remove("hide");
+            document.querySelector(".post-list").classList.add("hide");
+        }
+     </script>
+</body>
+
+</html>

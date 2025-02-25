@@ -1,0 +1,110 @@
+/* Create page styling */
+.create-container{
+    display: grid;
+}
+
+.postTitle{
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.postTitle textarea{
+    width: 90vw;
+    height: 5vh;
+    resize: none;
+    box-sizing: border-box;
+    border: 10px solid #f8f8f8;
+    background-color: #f8f8f8;
+    font-size: 1.2rem;
+    resize: none;
+}
+
+.textbox{
+    display: flex;
+    height: 73vh;
+    justify-content: center;
+    align-items: start;
+}
+
+textarea{
+    width: 90vw;
+    height: 70vh;
+    resize: none;
+    box-sizing: border-box;
+    border: 10px solid #f8f8f8;
+    background-color: #f8f8f8;
+    font-size: 1.2rem;
+    resize: none;
+}
+
+.postButton{
+    display: flex;
+    justify-content: end;
+    padding-right: 4.2%;
+}
+
+#submit{
+    width: 5vw;
+    height: 4vh;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    font-style: normal;
+    color: black;
+}
+
+
+/* View page styling */
+h1{
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+li{
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 2rem;
+}
+
+.view-container{
+    height: 60vh;
+    overflow-y: auto;
+}
+.view-container a{
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 2rem;
+}
+
+.post-list{
+    display: flex;
+    padding-left: 4%;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+.title{
+    color: white;
+}
+
+.date{
+    color: white;
+}
+
+.content{
+    color: white;
+}
