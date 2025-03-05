@@ -1,16 +1,16 @@
 /* Create page styling */
-.create-container{
+.create-container {
     display: grid;
 }
 
-.postTitle{
+.postTitle {
     display: flex;
     height: 10vh;
     justify-content: center;
     align-items: center;
 }
 
-.postTitle textarea{
+.postTitle textarea {
     width: 90vw;
     height: 5vh;
     resize: none;
@@ -18,17 +18,16 @@
     border: 10px solid #f8f8f8;
     background-color: #f8f8f8;
     font-size: 1.2rem;
-    resize: none;
 }
 
-.textbox{
+.textbox {
     display: flex;
     height: 73vh;
     justify-content: center;
     align-items: start;
 }
 
-textarea{
+textarea {
     width: 90vw;
     height: 70vh;
     white-space: pre-wrap;
@@ -37,47 +36,39 @@ textarea{
     border: 10px solid #f8f8f8;
     background-color: #f8f8f8;
     font-size: 1.2rem;
-    resize: none;
 }
 
-.postButton{
+.postButton {
     display: flex;
     justify-content: end;
     padding-right: 4.2%;
 }
 
-#submit{
-    width: 5vw;
-    height: 4vh;
+#submit {
+    width: 20vw;  /* Adjust button width to be more responsive */
+    height: 5vh;
     font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-size: 1rem;
     font-style: normal;
     color: black;
+    background-color: #f8f8f8;
+    border: none;
 }
 
-
 /* View page styling */
-.main-container{
+.main-container {
     display: grid;
 }
 
-h1{
+h1 {
     font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-style: normal;
     color: white;
 }
 
-li{
-    font-family: "Libre Baskerville", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: white;
-    font-size: 2rem;
-}
-
-li a{
+li {
     font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-style: normal;
@@ -85,43 +76,162 @@ li a{
     font-size: 2rem;
 }
 
-.post-list{
+li a {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 2rem;
+}
+
+.post-list {
     display: flex;
     padding-left: 4%;
+    flex-wrap: wrap;  /* Allow the post list to wrap for smaller screens */
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.show{
+.show {
     display: flex;
 }
 
-.content-display{
+.content-display {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.title{
+.title {
     display: flex;
     justify-content: center;
     font-size: 3rem;
-    width:100%;
+    width: 100%;
     color: white;
 }
 
-.date{
+.date {
     display: flex;
     justify-content: center;
     width: 100%;
     color: white;
 }
 
-.content{
+.content {
     display: flex;
     justify-content: center;
     max-width: 85%;
     color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* For tablets and smaller desktops */
+    .postTitle textarea {
+        font-size: 1rem;
+    }
+
+    .textbox textarea {
+        font-size: 1rem;
+    }
+
+    #submit {
+        width: 25vw;  /* Make button a little smaller */
+    }
+
+    .post-list {
+        flex-direction: column; /* Stack the post list vertically */
+        padding-left: 0;
+    }
+
+    .postButton {
+        justify-content: center; /* Center the submit button */
+    }
+
+    .content-display {
+        width: 100%;
+        padding: 0 10%;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .content {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* For tablets and smaller screens (portrait) */
+    .create-container {
+        padding: 0 2%;
+    }
+
+    .postTitle textarea {
+        font-size: 1rem;
+    }
+
+    .textbox textarea {
+        font-size: 1rem;
+    }
+
+    #submit {
+        width: 40vw;  /* Resize button */
+    }
+
+    .post-list {
+        flex-direction: column; /* Stack posts vertically */
+        padding-left: 0;
+    }
+
+    .title {
+        font-size: 2rem;  /* Adjust title font size */
+    }
+
+    .content {
+        font-size: 1rem;
+    }
+
+    .content-display {
+        width: 100%;
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For small mobile devices */
+    .create-container {
+        padding: 0 1%;
+    }
+
+    .postTitle textarea {
+        width: 90vw;
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .textbox textarea {
+        width: 90vw;
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    #submit {
+        width: 50vw;  /* Make the button even smaller */
+    }
+
+    .post-list {
+        flex-direction: column; /* Stack post list vertically */
+        padding-left: 0;
+    }
+
+    .title {
+        font-size: 1.8rem;  /* Adjust title font size for small screens */
+    }
+
+    .content {
+        font-size: 0.9rem;
+        padding: 0 5%;
+    }
 }

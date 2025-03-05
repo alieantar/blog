@@ -41,4 +41,75 @@ a{
     color: white;
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* For tablets and smaller desktops */
+    .logo-svg {
+        width: 30vw;  /* Resize logo for medium screens */
+        height: 15vh;
+    }
 
+    .footer {
+        font-size: 1.2rem;
+    }
+
+    .nav-item a {
+        font-size: 3.5rem; /* Adjust the font size for nav links on smaller devices */
+    }
+}
+
+@media (max-width: 768px) {
+    /* For tablets and smaller screens (portrait) */
+    body {
+        padding: 0 2%;
+    }
+
+    .footer {
+        flex-direction: column;  /* Stack footer items */
+        align-items: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .logo-svg {
+        width: 40vw;  /* Adjust logo size */
+        height: 12vh;
+    }
+
+    .nav-item {
+        gap: 2vh;
+    }
+
+    .nav-item a {
+        font-size: 3rem;  /* Smaller font size for mobile */
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For small mobile devices */
+    .footer {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .logo-svg {
+        width: 50vw;  /* Make logo even smaller on mobile */
+        height: 10vh;
+    }
+
+    .nav-item {
+        gap: 1.5vh;
+    }
+
+    .nav-item a {
+        font-size: 2.5rem;  /* Further reduce font size on small screens */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+}
