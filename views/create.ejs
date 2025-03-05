@@ -15,21 +15,50 @@
     <%- include("partials/header.ejs") %>
 
     <div class="create-container">
-        <form action="/submit" method="POST">
+        <form id="postForm">
             <div class="postTitle">
-                <textarea name="title" id="postTitle" placeholder = "Title"></textarea>
+                <textarea name="title" id="postTitle" placeholder="Title"></textarea>
             </div>
             <div class="textbox">
-                <textarea name="content" id="postContent" placeholder = "Your thoughts here..."></textarea>
+                <textarea name="content" id="postContent" placeholder="Your thoughts here..."></textarea>
             </div>
             <div class="postButton">
-                <button id="submit">Post</button>
+                <button type="submit" id="submit">Post</button>
             </div>
         </form>
     </div>
 
-    
     <%- include("partials/footer.ejs") %>
-</body>
 
+    <script>
+        // Handle form submission (store in sessionStorage)
+        document.getElementById('postForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Get the post data from the form
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').value;
+            const datePosted = new Date().toDateString();
+            
+            // Create a new post object
+            const newPost = {
+                title: title,
+                content: content,
+                date: datePosted
+            };
+
+            // Retrieve existing posts or initialize an empty array
+            let posts = JSON.parse(sessionStorage.getItem('posts')) || [];
+
+            // Add the new post to the posts array
+            posts.push(newPost);
+
+            // Save the updated posts array back to sessionStorage
+            sessionStorage.setItem('posts', JSON.stringify(posts));
+
+            // After storing, redirect to /view to display the posts
+            window.location.href = '/view';  // Navigate to view page to see the posts
+        });
+    </script>
+</body>
 </html>
