@@ -16,7 +16,7 @@
 <body>
     <%- include("partials/header.ejs") %>
 
-    <div class="view-container">
+    <div class="main-container">
         <% if (locals.posts) { %>
             <div class="post-list">
                 <ol>
@@ -30,15 +30,13 @@
                 </ol>
 
             </div>
-            <div class = "hide content-display">
-                <h2 class = "title"></h2>
-                <h3 class = "date"></h3>
-                <p class = "content"></p>
-            </div>
         <% } %>
-
+        <div class = "hide content-display">
+            <h1 class = "title"></h1>
+            <h3 class = "date"></h3>
+            <p class = "content"></p>
+        </div>
     </div>
-
     <%- include("partials/footer.ejs") %>
     <!-- <script src="/js/contentNavigation.js"></script> -->
      <script>
@@ -49,8 +47,12 @@
             console.log(posts[id][2]);
             document.querySelector(".title").innerHTML = posts[id][1];
             document.querySelector(".date").innerHTML = posts[id][0];
-            document.querySelector(".content").innerHTML = posts[id][2];
-            document.querySelector(".hide").classList.remove("hide");
+
+            // Ensures line breaks are rendering as needed.
+            var formattedText = posts[id][2].replace(/\n/g, "<br>");
+            document.querySelector(".content").innerHTML = formattedText;
+            document.querySelector(".content-display").classList.add("show");
+            document.querySelector(".content-display").classList.remove("hide");
             document.querySelector(".post-list").classList.add("hide");
         }
      </script>

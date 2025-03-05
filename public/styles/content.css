@@ -31,6 +31,7 @@
 textarea{
     width: 90vw;
     height: 70vh;
+    white-space: pre-wrap;
     resize: none;
     box-sizing: border-box;
     border: 10px solid #f8f8f8;
@@ -57,6 +58,10 @@ textarea{
 
 
 /* View page styling */
+.main-container{
+    display: grid;
+}
+
 h1{
     font-family: "Libre Baskerville", serif;
     font-weight: 400;
@@ -72,11 +77,7 @@ li{
     font-size: 2rem;
 }
 
-.view-container{
-    height: 60vh;
-    overflow-y: auto;
-}
-.view-container a{
+li a{
     font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-style: normal;
@@ -97,14 +98,30 @@ li{
     display: flex;
 }
 
+.content-display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .title{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    width:100%;
     color: white;
 }
 
 .date{
+    display: flex;
+    justify-content: center;
+    width: 100%;
     color: white;
 }
 
 .content{
+    display: flex;
+    justify-content: center;
+    max-width: 85%;
     color: white;
 }
